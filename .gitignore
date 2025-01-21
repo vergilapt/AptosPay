@@ -1,41 +1,137 @@
-# 忽略 Move 构建输出
-/build/
-/.move/
+# Rust specific ignores
+# Please follow https://help.github.com/en/articles/ignoring-files to create a global
+# .gitignore file locally for IDE/Emacs/Vim generated files.
+**/target
+**/*.rs.bk
+.idea/
 
-# 忽略 IDE 配置文件
-/.idea/
-/.vscode/
-*.code-workspace
+# Ignore wallet mnemonic files used for deterministic key derivation
+*.mnemonic
 
-# 忽略本地环境文件
-.env
-.env.local
+# GDB related
+**/.gdb_history
 
-# 忽略日志文件
-*.log
-
-# 忽略操作系统生成的文件
+# macOS Specific ignores
+# General
 .DS_Store
-Thumbs.db
+.AppleDouble
+.LSOverride
 
-# 忽略测试输出
-/test-results/
-/coverage/
+# Thumbnails
+._*
 
-# 忽略依赖目录
-/node_modules/
-/target/
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
-# 忽略本地开发工具生成的文件
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Generated VM config in vm-genesis
+aptos-move/vm-genesis/genesis/vm_config.toml
+
+# Terraform
+.terraform/
+terraform/terraform.tfstate*
+terraform/.terraform.tfstate*
+terraform/fullnode/*-kubernetes.json
+terraform/validator/*/*-kubernetes.json
+terraform/validator/*/*-vault.ca
+terraform/validator/*/*-kube.config
+terraform/validator/vault-init/backend.tf
+terraform/testnet/*-kubernetes.json
+terraform/testnet/*-vault.ca
+.terraform.lock.hcl
+
+# Move Build Output
+build/
+
+# Move coverage and tracing information
+.trace
+*.mvcov
+
+# Do not ignore the Move build output under the releases for DPN, core, and
+# experimental -- these are the release code.
+!aptos-move/framework/DPN/releases/artifacts/**
+!aptos-move/framework/experimental/releases/artifacts/**
+!aptos-move/framework/aptos-framework/releases/artifacts/**
+
+# Do not ignore the Move script for the faucet.
+# https://stackoverflow.com/a/16318111/3846032
+!aptos-move/move-examples/scripts/minter/build
+aptos-move/move-examples/scripts/minter/build/*
+!aptos-move/move-examples/scripts/minter/build/Minter
+aptos-move/move-examples/scripts/minter/build/Minter/*
+!aptos-move/move-examples/scripts/minter/build/Minter/bytecode_scripts
+
+# Docker incremental build temporary files and directories
+target-out-docker
+**/Dockerfile.tmp
+# Indexer grpc temporary certificates.
+docker/compose/indexer-grpc/data-service-grpc-server.crt
+docker/compose/indexer-grpc/data-service-grpc-server.key
+
+# Doc generation output
+*.md.old
+
+# Vim swap files
 *.swp
 *.swo
-*.sublime-workspace
-*.sublime-project
 
-# 忽略临时文件
-/tmp/
-*.tmp
-*.temp
+# Emacs backup files
+*~
+.\#*
+.*\#
+\#*\#
 
-# 忽略用户自定义的本地配置文件
-*.local
+# Aptos CLI / local testnet files
+.aptos
+**/*.rdb
+
+# VSCode settings
+.vscode/
+
+# Typescript
+*.env
+node_modules
+
+# local /data dir sometimes used for testing
+/data
+
+# Cached python files
+__pycache__
+
+# ignore framework release bundle file
+**/*.mrb
+
+# Profiler outputs
+aptos-move/aptos-vm-profiling/**/*.log
+aptos-move/aptos-vm-profiling/**/*.txt
+
+# Gas profiler outputs
+aptos-move/e2e-move-tests/gas-profiling
+gas-profiling
+
+# replay-verify and module-verify script outputs
+metadata-cache
+/local/
+run_*
+
+# test files for indexer GRPC
+test_indexer_grpc_*.yaml
+test_indexer_grpc/*
+ecosystem/indexer-grpc/indexer-transaction-generator/*.yaml
+
+# ignore compiler artifacts
+*.dot
+*.bytecode
+!third_party/move/move-prover/tests/xsources/design/*.bytecode

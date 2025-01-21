@@ -1,80 +1,27 @@
-AptosPay
-AptosPay 是一个基于 Aptos 区块链的支付处理工具，旨在为开发者提供简单、高效的支付解决方案。通过 AptosPay，开发者可以轻松集成加密货币支付功能到他们的应用程序中，支持多种支付场景，包括电子商务、订阅服务和点对点支付。
-官方网站： https://www.aptospay.com   https://www.aptospay.com.hk         
+<a href="https://aptos.dev">
+	<img width="100%" src="./.assets/aptos_banner.png" alt="Aptos Banner" />
+</a>
 
-功能特性
-简单集成：提供简洁的 API 接口，方便开发者快速集成支付功能。
+---
 
-多币种支持：支持 Aptos 区块链上的多种代币，满足不同支付需求。
+[![License](https://img.shields.io/badge/license-Apache-green.svg)](LICENSE)
+[![Lint+Test](https://github.com/aptos-labs/aptos-core/actions/workflows/lint-test.yaml/badge.svg)](https://github.com/aptos-labs/aptos-core/actions/workflows/lint-test.yaml)
+[![codecov](https://codecov.io/gh/aptos-labs/aptos-core/branch/main/graph/badge.svg?token=X01RKXSGDE)](https://codecov.io/gh/aptos-labs/aptos-core)
+[![Discord chat](https://img.shields.io/discord/945856774056083548?style=flat-square)](https://discord.gg/aptosnetwork)
 
-安全可靠：基于 Aptos 区块链的高安全性，确保交易的安全性和不可篡改性。
+Aptos is a layer 1 blockchain bringing a paradigm shift to Web3 through better technology and user experience. Built with Move to create a home for developers building next-gen applications.
 
-实时交易确认：实时监控交易状态，确保支付过程的透明和可靠。
+## Getting Started
 
-开发者友好：提供详细的文档和示例代码，帮助开发者快速上手。
+* [Aptos Foundation](https://aptosfoundation.org/)
+* [Aptos Developer Network](https://aptos.dev)
+* [Guide - Integrate with the Aptos Blockchain](https://aptos.dev/guides/system-integrators-guide)
+* [Tutorials](https://aptos.dev/tutorials)
+* Follow us on [Twitter](https://twitter.com/Aptos).
+* Join us on the [Aptos Discord](https://discord.gg/aptosnetwork).
 
-快速开始
-安装
-首先，确保你已经安装了 Node.js 和 npm。然后，通过 npm 安装 AptosPay：
+## Contributing
 
-bash
-复制
-npm install aptospay
-使用示例
-以下是一个简单的示例，展示如何使用 AptosPay 创建一个支付请求：
+You can learn more about contributing to the Aptos project by reading our [Contribution Guide](https://github.com/aptos-labs/aptos-core/blob/main/CONTRIBUTING.md) and by viewing our [Code of Conduct](https://github.com/aptos-labs/aptos-core/blob/main/CODE_OF_CONDUCT.md).
 
-javascript
-复制
-const { AptosPay } = require('aptospay');
-
-// 初始化 AptosPay
-const aptosPay = new AptosPay({
-  apiKey: 'your-api-key',
-  network: 'mainnet' // 或者 'testnet'
-});
-
-// 创建支付请求
-const paymentRequest = await aptosPay.createPaymentRequest({
-  amount: 100, // 支付金额
-  currency: 'APT', // 货币类型
-  description: '购买商品', // 支付描述
-  callbackUrl: 'https://your-callback-url.com' // 回调地址
-});
-
-console.log('Payment Request:', paymentRequest);
-回调处理
-当支付完成后，AptosPay 会向指定的回调地址发送一个 POST 请求，包含支付结果的信息。你可以在服务器上处理这个回调，以确认支付状态：
-
-javascript
-复制
-app.post('/payment-callback', (req, res) => {
-  const paymentResult = req.body;
-
-  if (paymentResult.status === 'success') {
-    // 支付成功，处理业务逻辑
-    console.log('Payment succeeded:', paymentResult);
-  } else {
-    // 支付失败，处理错误逻辑
-    console.error('Payment failed:', paymentResult);
-  }
-
-  res.status(200).send('OK');
-});
-文档
-详细的 API 文档和使用指南可以在 AptosPay 文档 中找到。
-
-贡献
-我们欢迎任何形式的贡献！如果你有任何建议或发现任何问题，请提交 Issue 或 Pull Request，或者直接联系我们。
-
-许可证
-AptosPay 采用 MIT 许可证。详情请参阅 LICENSE 文件。
-
-联系我们
-如果你有任何问题或需要帮助，请通过以下方式联系我们：
-
-邮箱: vergilapt@gmail.com
-微信：vergil_apt
-GitHub Issues: AptosPay Issues
-
-感谢你使用 AptosPay！我们期待看到你构建出更多创新的应用。
-
+Aptos Core is licensed under [Apache 2.0](https://github.com/aptos-labs/aptos-core/blob/main/LICENSE).
