@@ -17,7 +17,6 @@ blockchains, and will gradually release the source codes for each blockchain.
 | Near     | ✅                 | ✅                    | ✅                   |
 | Solana   | ✅                 | ✅                    | ✅                   |
 | Stacks   | ✅                 | ✅                    | ✅                   |
-| SUI      | ✅                 | ✅                    | ✅                   |
 | Tron     | ✅                 | ✅                    | ✅                   |
 | Cosmos   | ✅                 | ✅                    | ✅                   |
 | Axelar   | ✅                 | ✅                    | ✅                   |
