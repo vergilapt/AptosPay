@@ -25,7 +25,7 @@ AptosPay 是一个基于 Aptos 区块链的支付处理工具，旨在为开发�
    请在您的浏览器上安装 PETRA 钱包插件，以便进行购买操作。您可以从 [PETRA 钱包官网](https://petra.app/) 下载安装。
 
 3. **克隆代码仓库**:
-   使用 `git clone [repository URL]` 命令克隆代码仓库到本地。请将 `[repository URL]` 替换为实际的代码仓库地址。
+   使用 `git clone [https://github.com/AptosPay/aptospay/]` 命令克隆代码仓库到本地。
 
 4. **启动本地 HTTP 测试服务器**:
    在克隆的代码仓库根目录下，打开终端并运行 `python -m http.server` 命令来启动一个本地 HTTP 服务器。
