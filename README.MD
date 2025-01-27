@@ -44,4 +44,4 @@ https://www.aptospay.com/ https://www.aptospay.org/ https://www.aptospay.com.hk/
 
 邮箱: vergilapt@gmail.com 微信：vergil_apt
 
-如果您有任何合作的想法也可以联系我们。
+如果您有任何合作的想法也可以联系我们,我们需要资金与人才支持。
