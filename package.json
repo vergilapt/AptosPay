@@ -1,7 +1,5 @@
 {
   "dependencies": {
-    "@aptos-labs/ts-sdk": "^1.33.2",
-    "aptos": "^1.21.0",
-    "express": "^4.21.2"
+    "aptos": "^1.21.0"
   }
 }
