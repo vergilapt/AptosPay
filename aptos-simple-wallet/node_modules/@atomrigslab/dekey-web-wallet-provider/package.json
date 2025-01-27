@@ -1,0 +1,68 @@
+{
+  "name": "@atomrigslab/dekey-web-wallet-provider",
+  "version": "1.2.1",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && yarn build:prep && yarn build:inpage && yarn build:contentscript && yarn build:concat && yarn build:bundle --openssl-legacy-provider",
+    "build:prep": "export NODE_OPTIONS=--openssl-legacy-provider && mkdir -p dist && rm -rf dist/*",
+    "build:inpage": "export NODE_OPTIONS=--openssl-legacy-provider && cd src/inpage && npx webpack --config webpack.config.js",
+    "build:contentscript": "export NODE_OPTIONS=--openssl-legacy-provider && node src/content-script/build.js",
+    "build:concat": "export NODE_OPTIONS=--openssl-legacy-provider && concat-cli -f dist/inpage-bundle.js src/content-script/index.js -o dist/index-raw.js",
+    "build:bundle": "export NODE_OPTIONS=--openssl-legacy-provider && npx webpack --config webpack.config.js",
+    "build:dev": "yarn build:prep && yarn build:dev:inpage && yarn build:contentscript && yarn build:concat && yarn build:dev:bundle",
+    "build:dev:inpage": "cd src/inpage && npx webpack --mode=development --config webpack.config.js",
+    "build:dev:bundle": "npx webpack --mode=development --config webpack.config.js",
+    "lint:eslint": "eslint . --cache --ext js,ts",
+    "lint:misc": "prettier '**/*.json' '**/*.md' '**/*.yml' --single-quote --ignore-path .gitignore",
+    "lint": "yarn lint:eslint && yarn lint:misc --check",
+    "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
+    "prepublishOnly": "export NODE_OPTIONS=--openssl-legacy-provider && yarn build",
+    "commit": "cz",
+    "prepare": "husky install"
+  },
+  "license": "ISC",
+  "description": "The JavaScript injected into every web page in the Dekey Web Embedded Wallet browser.",
+  "files": [
+    "dist/index.js"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/preset-env": "^7.12.7",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@metamask/eslint-config": "^6.0.0",
+    "@metamask/eslint-config-nodejs": "^6.0.0",
+    "@metamask/object-multiplex": "^1.1.0",
+    "babel-loader": "^8.0.6",
+    "concat-cli": "^4.0.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.3.0",
+    "pump": "^3.0.0",
+    "readable-stream": "^2.3.7",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@atomrigslab/providers": "1.1.0"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

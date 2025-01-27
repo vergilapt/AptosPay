@@ -1,0 +1,50 @@
+{
+  "name": "@mizuwallet-sdk/aptos-wallet-adapter",
+  "description": "Mizu Wallet Adapter for Aptos",
+  "version": "0.3.2",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Aptos",
+    "Mizu",
+    "MizuWallet",
+    "Aptos Wallet",
+    "Aptos Wallet Adapter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mizuwallet/mizuwallet-sdk.git"
+  },
+  "homepage": "https://github.com/mizuwallet/mizuwallet-sdk",
+  "bugs": {
+    "url": "https://github.com/mizuwallet/mizuwallet-sdk/issues"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vite-plugin-dts": "^3.9.1",
+    "@mizuwallet-sdk/core": "1.4.0",
+    "@mizuwallet-sdk/protocol": "0.0.6"
+  },
+  "dependencies": {
+    "@aptos-labs/ts-sdk": "^1.26.0",
+    "@aptos-labs/wallet-standard": "0.1.0-ms.1",
+    "buffer": "^6.0.3"
+  },
+  "peerDependencies": {
+    "@mizuwallet-sdk/core": ">=1.4.0",
+    "@mizuwallet-sdk/protocol": "0.0.6"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "clean": "rm -rf dist/*",
+    "pub": "pnpm publish --no-git-checks --access public"
+  }
+}
