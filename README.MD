@@ -1,5 +1,7 @@
 AptosPay 是一个基于 Aptos 区块链的支付处理工具，旨在为开发者提供简单、高效的支付解决方案。通过 AptosPay，开发者可以轻松集成加密货币支付功能到他们的应用程序中，支持多种支付场景，包括电子商务、订阅服务和点对点支付。
 
+https://www.aptospay.com/ https://www.aptospay.org/ https://www.aptospay.com.hk/ (HongKong China)
+
 功能特性 简单集成：提供简洁的 API 接口，方便开发者快速集成支付功能。
 
 多币种支持：支持 Aptos 区块链上的多种代币，满足不同支付需求。
@@ -42,6 +44,6 @@ AptosPay 是一个基于 Aptos 区块链的支付处理工具，旨在为开发�
 
 联系我们 如果你有任何问题或需要帮助，请通过以下方式联系我们：
 
-邮箱: support@aptospay.com 微信：vergil_apt
+邮箱: vergilapt@gmail.com 微信：vergil_apt
 
-GitHub Issues: AptosPay Issues
+如果您有任何合作的想法也可以联系我们。
