@@ -1,11 +1,62 @@
 body {
     font-family: sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
+}
+
+.login-register {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+    width: 300px;
+}
+
+.login-register h2 {
+    margin-bottom: 15px;
+}
+
+.login-register form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+}
+
+.login-register label {
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.login-register input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.login-register button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.login-register button:hover {
+    background-color: #0056b3;
 }
 
 .container {
@@ -14,20 +65,33 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 80%;
+    max-width: 960px;
+    margin: 20px auto;
 }
 
-h1 {
+.username-setting {
     margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
 }
 
-img {
-    margin-bottom: 20px;
-    border-radius: 8px;
+.username-setting h3 {
+    margin-top: 0;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
+.username-setting input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.username-setting button {
+    padding: 8px 15px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -35,6 +99,125 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.username-setting button:hover {
     background-color: #0056b3;
+}
+
+.order-history {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.order-history h3 {
+    margin-top: 0;
+}
+
+.order-history ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.order-history li {
+    margin-bottom: 5px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* 后台管理页面样式 */
+.admin-management h2 {
+    margin-bottom: 15px;
+}
+
+.admin-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.admin-management th, .admin-management td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.admin-management th {
+    background-color: #f4f4f4;
+}
+
+img {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    max-width: 100%; /* 确保图片不会超出 container */
+    height: auto;
+}
+
+.payment-options, .shipping-address {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.payment-options h3, .shipping-address h3 {
+    margin-top: 0; /* 移除 payment-options 和 shipping-address 标题的上边距 */
+}
+
+
+.payment-options label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.shipping-address input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button#buyButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button#buyButton:hover {
+    background-color: #218838;
+}
+
+.wallet-connect-area {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    z-index: 1000; /* 确保在其他内容之上 */
+}
+
+#connectPetraWallet, #disconnectWallet {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#connectPetraWallet:hover, #disconnectWallet:hover {
+    background-color: #0056b3;
+}
+
+#walletAddressDisplay {
+    margin-left: 10px;
+    color: #555;
 }

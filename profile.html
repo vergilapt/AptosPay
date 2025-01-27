@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人页面</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wallet-connect-area">
+        <div id="walletAddressDisplay" style="display:none;">
+            <span id="walletAddress"></span>
+            <button id="disconnectWallet">断开连接</button>
+        </div>
+    </div>
+    <div class="container">
+        <h1>个人页面</h1>
+
+        <div class="username-setting">
+            <h3>设置用户名</h3>
+            <form id="usernameForm">
+                <input type="text" id="username" placeholder="请输入用户名" required>
+                <button type="submit">保存用户名</button>
+            </form>
+        </div>
+
+        <div class="order-history">
+            <h3>历史订单</h3>
+            <ul id="orderList">
+                <li>(暂无订单)</li>
+            </ul>
+        </div>
+
+        <a href="product.html">返回商品页面</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

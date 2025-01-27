@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购买手机</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wallet-connect-area">
+        <button id="connectPetraWallet">连接 Petra 钱包</button>
+        <div id="walletAddressDisplay" style="display:none;">
+            <span id="walletAddress"></span>
+            <button id="disconnectWallet">断开连接</button>
+        </div>
+        <a href="profile.html" style="margin-left: 10px; text-decoration: none;"><button>个人页面</button></a>
+    </div>
+    <div class="container">
+        <h1>购买手机</h1>
+        <img src="APTOS_meta_opengraph.jpg" alt="手机图片" width="300">
+        <p>价格：1 USD</p>
+
+        <div class="payment-options">
+            <h3>支付方式</h3>
+            <label>
+                <input type="radio" name="paymentMethod" value="APT" checked> APT
+            </label>
+            <label>
+                <input type="radio" name="paymentMethod" value="USDC"> USDC
+            </label>
+            <label>
+                <input type="radio" name="paymentMethod" value="USDT"> USDT
+            </label>
+        </div>
+
+        <div class="shipping-address">
+            <h3>收货地址</h3>
+            <form id="addressForm">
+                <input type="text" id="province" placeholder="省" required>
+                <input type="text" id="city" placeholder="市" required>
+                <input type="text" id="district" placeholder="区/县" required>
+                <input type="text" id="detailAddress" placeholder="详细地址" required>
+            </form>
+        </div>
+
+        <button id="buyButton">使用 PETRA 购买</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
