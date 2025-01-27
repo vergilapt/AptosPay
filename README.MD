@@ -12,8 +12,6 @@ https://www.aptospay.com/ https://www.aptospay.org/ https://www.aptospay.com.hk/
 
 开发者友好：提供详细的文档和示例代码，帮助开发者快速上手。
 
-这是一个简单的购买手机的网页。
-
 ## 教程
 
 本教程将提供一个简单的示例。
